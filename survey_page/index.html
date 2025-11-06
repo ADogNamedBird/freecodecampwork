@@ -8,16 +8,62 @@
   <body>
     <h1 id="title">Html Survey Form</h1>
     <p id="description">Your feedback is highly valued, it really helps us improve your browsing experience!</p>
+    
     <form id="survey-form">
-      
-      <label for="name-label">Name:</label>
-      <input type="text" id="name" required/>
+      <fieldset>
+        <legend>Your Info</legend>
+        <label id="name-label" for="name">Name:</label>
+        <input type="text" id="name" required placeholder="ex: John Doe"/>
 
-      <label for="email-label">Email:</label>
-      <input type="email" id="email" required/>
+        <label id="email-label" for="email">Email:</label>
+        <input type="email" id="email" required placeholder="ex: email@email.com"/>
 
-      <label for="number-label">Age:</label>
-      <input type="number" id="number" min="3" max="100"/>
+        <label id="number-label" for="number">Age (optional):</label>
+        <input type="number" id="number" min="3" max="100" placeholder="18"/>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <label for="dropdown">What option best describes your current role?</label>
+        <select id="dropdown">
+          <option value="" disabled selected>Please select an option</option>
+          <option value="recruiter">Recruiter</option>
+          <option value="wanderer">Wanderer</option>
+          <option value="nosey-neighbor">Nosey Neighbor</option>
+          <option value="mysterious-stranger">Mysterious Stranger</option>
+          <option value="my-mother">My Mother</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>How would you rate this website so far?</legend>
+        <input id="satisfactory-option" type="radio" value="satisfactory" name="website-rating"/>
+        <label for="satisfactory-option">Satisfactory</label>
+        <input id="needs-work-option" type="radio" value="needs-work" name="website-rating"/>
+        <label for="needs-work-option">Needs Work</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What features would you like to see added? (check all that apply)</legend>
+        <input type="checkbox" value="formatting"/>
+        <label for="formatting">Improved formatting</label>
+        <input type="checkbox" value="CSS"/>
+        <label for="CSS">CSS implementation</label>
+        <input type="checkbox" value="scripts"/>
+        <label for="scripts">JavaScript implementation</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Comments (optional):</legend>
+        <textarea 
+          cols="50"
+          rows="15"
+          name="comments"
+          id="comments"
+        ></textarea>
+      </fieldset>
+
+      <button type="submit" id="submit">Submit</button>
 
     </form>
   </body>
